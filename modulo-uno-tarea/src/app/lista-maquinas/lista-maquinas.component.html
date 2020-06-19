@@ -55,7 +55,11 @@
         </div>
     </div>
     <hr class="mb-5">
-    <ul class="list-inline">
-        <app-maquinas *ngFor="let m of maquinas" [maquina]="m"></app-maquinas>
-    </ul>
+
+    <div class="row">
+        <ul class="list-inline">
+            <app-maquinas *ngFor="let m of maquinas" [maquina]="m"></app-maquinas>
+        </ul>
+    </div>
+
 </div>

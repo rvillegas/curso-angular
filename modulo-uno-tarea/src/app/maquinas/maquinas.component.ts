@@ -8,7 +8,7 @@ import { Input } from '@angular/core';
 })
 export class MaquinasComponent implements OnInit {
 @Input() maquina: Maquinaria;
-
+@HostBinding('attr.class') cssClass='col-md-6';
   constructor() { }
 
   ngOnInit(): void {

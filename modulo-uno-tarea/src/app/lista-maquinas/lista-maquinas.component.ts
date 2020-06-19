@@ -19,9 +19,6 @@ export class ListaMaquinasComponent implements OnInit {
     this.maquinas.push(maq);
     var maq:Maquinaria = new Maquinaria('VD-400','Volqueta Doble Troque','DAF','CF85',7000);
     this.maquinas.push(maq); 
-
-
-
   }
   ngOnInit(): void {
   }

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "modulo-uno-tarea"
+    }
+  },
+  "defaultProject": "modulo-uno-tarea",
+  "cli": {
+    "analytics": "904fb907-fa85-4ad2-8a06-3b98321159d0"
+  }
 }

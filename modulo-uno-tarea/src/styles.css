@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+/* 1. el paquete npm de Bootstrap instalado.
+   2. la importación de los css de bootstrap en los estilos globales de la app angular. */
+
+   @import '~bootstrap/dist/css/bootstrap.css';

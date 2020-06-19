@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-hola-mundo": {
+    "modulo-uno-tarea": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-hola-mundo",
+            "outputPath": "dist/modulo-uno-tarea",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-hola-mundo:build"
+            "browserTarget": "modulo-uno-tarea:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-hola-mundo:build:production"
+              "browserTarget": "modulo-uno-tarea:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-hola-mundo:build"
+            "browserTarget": "modulo-uno-tarea:build"
           }
         },
         "test": {
@@ -110,19 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-hola-mundo:serve"
+            "devServerTarget": "modulo-uno-tarea:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-hola-mundo:serve:production"
+              "devServerTarget": "modulo-uno-tarea:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "angular-hola-mundo",
-  "cli": {
-    "analytics": "bcd10c7b-9cae-4892-8d48-73db21f83d2e"
-  }
+    }},
+  "defaultProject": "modulo-uno-tarea"
 }

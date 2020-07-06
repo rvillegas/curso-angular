@@ -1,7 +1,14 @@
 <div class="container content">
+  <div class="navlinks">
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/detalle']">Detalles</a>
+  </div>
+
   <div class="row">
     <h1 class="display-4 bg-light">{{title}}</h1>
 
-    <app-lista-maquinas></app-lista-maquinas>
+    
+
   </div>
+  <router-outlet></router-outlet>
 </div>

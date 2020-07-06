@@ -1,0 +1,52 @@
+<form [formGroup]="fg" (ngSubmit)="guardar( fg.controls['codigo'].value,
+                        fg.controls['nombre'].value,
+                        fg.controls['marca'].value,
+                        fg.controls['modelo'].value,                      
+                        fg.controls['horometro'].value
+                       )">
+    <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input type="text" class="form-control" id="codigo" placeholder="ingrese codigo de la maquina"
+            [formControl]="fg.controls['codigo']">
+        <div *ngIf="fg.controls['codigo'].hasError('required')">Codigo requerido</div>
+        <div *ngIf="fg.controls['codigo'].hasError('codigoInvalido')">El codigo del equipo es invalido</div>
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" placeholder="descripcion del equipo"
+            [formControl]="fg.controls['nombre']">
+        <div *ngIf="fg.controls['nombre'].hasError('required')">Descripcion requerido</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" placeholder="marca..."
+                    [formControl]="fg.controls['marca']">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" placeholder="imodelo..."
+                    [formControl]="fg.controls['modelo']">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="horometro">Horometro</label>
+
+                <input type="number" class="form-control" id="horometro" placeholder="Horometro..."
+                    [formControl]="fg.controls['horometro']">
+            </div>
+        </div>
+
+
+    </div>
+    <button type="submit" class="btn	btn-primary" *ngIf="fg.valid">Guardar!</button>
+</form>

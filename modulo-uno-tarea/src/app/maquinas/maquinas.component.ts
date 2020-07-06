@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, EventEmitter, Output } from '@angular/core';
 import {Maquinaria} from './../models/maquinaria.model'
 import { Input } from '@angular/core';
 @Component({
@@ -9,9 +9,19 @@ import { Input } from '@angular/core';
 export class MaquinasComponent implements OnInit {
 @Input() maquina: Maquinaria;
 @HostBinding('attr.class') cssClass='col-md-6';
-  constructor() { }
+@Output() clicked: EventEmitter<Maquinaria>;
+constructor() {
+  this.clicked = new EventEmitter();
+ }
 
   ngOnInit(): void {
+  }
+
+  seleccionar(){
+    this.clicked.emit(this.maquina);
+   return false; 
+
+
   }
 
 }

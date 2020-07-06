@@ -1,7 +1,15 @@
-<li class="list-inline-item border border-success rounded jumbotron jumbotron-fluid m-1 p-1"  style="height:120px; width:400px;" >
+
+
+<!--list-inline-item border border-success rounded jumbotron jumbotron-fluid m-1 p-1"-->
+<!--list-inline-item border border-success rounded bg-warning m-1 p-1-->
+
+<li class="list-inline-item border border-success rounded jumbotron jumbotron-fluid m-1 p-1"  style="height:160px; width:400px;" >
 <div class="row">
         <div class="col-12">
-            <h1 class='badge badge-secondary'>{{maquina.codigo}}</h1>
+            <span [ngSwitch]="maquina.getTipo()">
+                <h1 *ngSwitchCase="'BO'" class='badge badge-warning display-4'>{{maquina.codigo}}</h1>
+                <h1 *ngSwitchDefault class='badge badge-secondary display-4'>{{maquina.codigo}}</h1>
+        </span>
         </div>
         <div class="col-12">
             <p>{{maquina.descripcion}}</p>
@@ -13,7 +21,16 @@
             <p>{{maquina.modelo}}</p>
         </div>
         <div class="col-md-4">
-            <p>{{maquina.horometro}}</p>
-        </div>
+            
+        <p *ngIf="maquina.horometro>4000; else nuevos" style='color:red;'>{{maquina.horometro}}</p>
+        <ng-template #nuevos><p style='color:green;'>{{maquina.horometro}}</p></ng-template>    
+    </div>
+    <div class="col-6 text-center">
+            <a href="#" class='btn btn-success' (click)="seleccionar()">Seleccionar</a>
+    </div>
+    <div class="col-6">   
+            <a class='btn btn-success'  [routerLink]="['/detalle']">Ver Detalle</a>
+        </div>    
+  
     </div>
 </li>

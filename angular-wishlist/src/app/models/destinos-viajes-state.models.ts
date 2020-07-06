@@ -86,6 +86,7 @@ export function reducerDestinosViajes(
                 items: [...state.items, (action as NuevoDestinoAction).destino]
             };
         }
+
         case DestinosViajesActionTypes.ELEGIDO_FAVORITO: {
             state.items.forEach(x => x.setSelected(false));
             const fav: DestinoViaje = (action as ElegidoFavoritoAction).destino;

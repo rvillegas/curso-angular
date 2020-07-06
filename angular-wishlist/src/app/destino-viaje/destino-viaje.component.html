@@ -22,7 +22,8 @@
             {{destino.votes}}          
         </div>
         <a href="#" class="btn-card" (click)="ir()">Ir!</a>
-        <span *ngIf="destino.isSelected()">
+        <!--<span *ngIf="destino.isSelected()">-->
+            <span *ngIf="destino.selected">
             <span ngNonBindable>-PREFERIDO -</span>
             
         </span>

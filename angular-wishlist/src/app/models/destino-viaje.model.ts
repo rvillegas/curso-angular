@@ -1,10 +1,11 @@
 import {v4 as uuid} from 'uuid';
 
 export class DestinoViaje {
+    //selected: boolean;
     servicios: string[];
     id = uuid();
 
-    constructor(public nombre: string , public u: string, public votes: number = 0, public selected: boolean = false){
+    constructor(public nombre: string , public u: string, public votes: number = 0, public selected:boolean = false){
         this.servicios = ['pileta', 'desayuno'];
         this.setSelected(false);
         //this.selected = false;

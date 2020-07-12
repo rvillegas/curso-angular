@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DestinoViaje } from './destino-viaje.model';
 import { DestinosApiClient } from './destinos-api-client.model';
-// import { HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 
 // ESTADO
 export interface DestinosViajesState {
@@ -30,7 +30,7 @@ export enum DestinosViajesActionTypes {
     ELEGIDO_FAVORITO = '[Destinos Viajes] Favorito',
     VOTE_UP = '[Destinos Viajes] Vote Up',
     VOTE_DOWN = '[Destinos Viajes] Vote Down',
-    // INIT_MY_DATA = '[Destinos Viajes] Init My Data'
+    INIT_MY_DATA = '[Destinos Viajes] Init My Data'
 }
 
 export class NuevoDestinoAction implements Action {
@@ -53,15 +53,14 @@ export class VoteDownAction implements Action {
     constructor(public destino: DestinoViaje) { }
 }
 
-/*
+
 export class InitMyDataAction implements Action {
   type = DestinosViajesActionTypes.INIT_MY_DATA;
   constructor(public destinos: string[]) {}
 }
-*/
 
-export type DestinosViajesActions = NuevoDestinoAction | ElegidoFavoritoAction | VoteUpAction | VoteDownAction;
-// | InitMyDataAction;
+
+export type DestinosViajesActions = NuevoDestinoAction | ElegidoFavoritoAction | VoteUpAction | VoteDownAction |InitMyDataAction;
 
 // REDUCERS
 export function reducerDestinosViajes(
@@ -70,8 +69,6 @@ export function reducerDestinosViajes(
 ): DestinosViajesState {
     switch (action.type) {
 
-
-        /*     
            case DestinosViajesActionTypes.INIT_MY_DATA: {
              const destinos: string[] = (action as InitMyDataAction).destinos;
              return {
@@ -79,7 +76,7 @@ export function reducerDestinosViajes(
                  items: destinos.map((d) => new DestinoViaje(d, ''))
                };
            }
-           */
+
         case DestinosViajesActionTypes.NUEVO_DESTINO: {
             return {
                 ...state,

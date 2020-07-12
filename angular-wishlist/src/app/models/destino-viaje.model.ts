@@ -22,5 +22,8 @@ export class DestinoViaje {
     voteDown() {
         this.votes--;
     }
+    
+    getById(id: string): DestinoViaje {
+        return this;
 }
-
+}

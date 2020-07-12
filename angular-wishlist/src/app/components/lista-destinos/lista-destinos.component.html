@@ -16,7 +16,7 @@
     <hr class="mb-5">
     <div class="row row-flex">
         <app-destino-viaje 
-            *ngFor="let d of all; let i= index" 
+            *ngFor="let d of getAll(); let i= index" 
             [destino]="d" 
             [idx]="i+1"
             (onClicked)="elegido(d)">

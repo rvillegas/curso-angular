@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8-browsers
     steps:
-      - checkuot:
+      - checkout:
             path: ~/myapp
       - restore_cache:
           key: angular-whishlist-{{ .Branch }}-{{ checksum "package-lock.json" }}

@@ -8,6 +8,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import Dexie from 'dexie';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import {NgxMapboxGLModule} from 'ngx-mapbox-gl';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DestinoViajeComponent } from './components/destino-viaje/destino-viaje.component';
@@ -35,6 +38,8 @@ import { HttpClientModule, HttpClient, HttpHeaders, HttpRequest } from '@angular
 import { DestinoViaje } from './models/destino-viaje.model';
 import { Observable, from } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
+import { EspiameDirective } from './espiame.directive';
+import { TrackearClickDirective } from './trackear-click.directive';
 
 //app config
 
@@ -43,7 +48,7 @@ export interface AppConfig {
 }
 
 const APP_CONFIG_VALUE: AppConfig = {
-  apiEndpoint: 'http://localhost:3000'
+  apiEndpoint: 'http://localhost:1000'
 };
 
 export const APP_CONFIG = new InjectionToken<AppConfig>('app.config');
@@ -190,7 +195,9 @@ const reducersInitialState = {
     VuelosComponent,
     VuelosDetalleComponent,
     VuelosMasInfoComponent,
-    VuelosMainComponent
+    VuelosMainComponent,
+    EspiameDirective,
+    TrackearClickDirective
   ],
   imports: [
     BrowserModule,
@@ -214,7 +221,9 @@ const reducersInitialState = {
         useFactory: (HttpLoaderFactory),
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxMapboxGLModule,
+    BrowserAnimationsModule
   ],
   providers: [
     //DestinosApiClient,

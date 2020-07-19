@@ -31,7 +31,7 @@ module.exports = function (config) {
           base: 'ChromeHeadless',
           flags: ['--no-sandbox', '--disable-gpu', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9223']
         }
-    }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
